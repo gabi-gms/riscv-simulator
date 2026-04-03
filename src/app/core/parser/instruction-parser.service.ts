@@ -12,8 +12,6 @@ export class InstructionParserService {
     const I_OPS = ['ADDI', 'LW', 'JALR'];
     const S_OPS = ['SW'];
 
-    console.log("parts: " + parts);
-
     if (R_OPS.includes(op)) {
       return {
         type: 'R',
@@ -47,15 +45,6 @@ export class InstructionParserService {
     } else {
       throw new Error(`Instrução desconhecida: ${op}`);
     }
-    return {} as Instruction;
   }
-
-  /*return {
-        type: 'S',
-        op: op as STypeOp,
-        rs1: parts[1].toLowerCase(),
-        rs2: match[2].toLowerCase(),
-        imm: parseInt(match[1])
-      };*/
 
 }
